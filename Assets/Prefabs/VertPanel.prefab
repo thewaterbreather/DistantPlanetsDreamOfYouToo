@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 65d76bb4c2267a342b8ebc2a2bd36f5a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,6 +100,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activate: []
   deactivate: []
+  delayedActivate: []
+  delayedDeactivate: []
+  delayTime: 1
 --- !u!61 &6758037935137728692
 BoxCollider2D:
   m_ObjectHideFlags: 0
