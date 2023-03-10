@@ -21,15 +21,15 @@ public class ComicP1Conditions : MonoBehaviour
                 frameScript = observedFrames[i].GetComponent<FrameUtility>();
                 if (frameScript.observed)
                 {
-                    if (frameScript.id == 1)
+                    if (frameScript.id == 1 && !observed1)
                     { observed1 = true; }
-                    if (frameScript.id == 2)
+                    if (frameScript.id == 2 && !observed2)
                     { observed2 = true; }
-                    if (frameScript.id == 3)
+                    if (frameScript.id == 3 && !observed3)
                     { observed3 = true; }
-                    if (frameScript.id == 4)
+                    if (frameScript.id == 4 && !observed4)
                     { observed4 = true; }
-                    if (frameScript.id == 5)
+                    if (frameScript.id == 5 && !observed5)
                     { observed5 = true; }
                 }
             }
