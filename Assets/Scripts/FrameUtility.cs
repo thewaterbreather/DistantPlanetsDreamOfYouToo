@@ -1,19 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using System.Threading.Tasks;
 using UnityEngine;
-
-public class FrameTrigger : MonoBehaviour
+/**
+ * @author Chase Franklin
+ * takes an array of GameObjects and either sets it to active or inactive
+ * delayed variations can also be performed with a variable delayTime
+ */
+public class FrameUtility : MonoBehaviour
 {
-    public GameObject[] activate;
-    public GameObject[] deactivate;
-    public GameObject[] delayedActivate;
-    public GameObject[] delayedDeactivate;
+    public int id;
+    public bool observed, activelyObserved = false;
+    public GameObject[] activate, deactivate, delayedActivate, delayedDeactivate;
     [SerializeField] private float delayTime = 1.0f;
 
-
-    void OnMouseOver()
+    void OnMouseEnter()
     {
+        observed = true;
+        activelyObserved = true;
+        Action();
+    }
+
+    private void OnMouseExit()
+    {
+        activelyObserved = false;
+    }
+
+    private void Action()
+    {
+        //Trigger Utility
         if (activate.Length > 0)
         {
             for (int i = 0; i < activate.Length; i++)
@@ -39,7 +55,6 @@ public class FrameTrigger : MonoBehaviour
         {
             Invoke("PerformDelayedActivate", delayTime);
         }
-
     }
 
     private void PerformDelayedDeactivate()
@@ -57,6 +72,4 @@ public class FrameTrigger : MonoBehaviour
             delayedActivate[i].SetActive(true);
         }
     }
-
-
 }
